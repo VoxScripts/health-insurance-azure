@@ -2,10 +2,18 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
-app.use(cors());
+// CORS Configuration
+app.use(cors({
+  origin: 'https://healthriskui.z1.web.core.windows.net'
+}));
 app.use(express.json());
 
-// Helper functions
+// Root endpoint
+app.get('/', (req, res) => {
+  res.send('Health Risk API is running');
+});
+
+// Helper functions (keep exactly as you had them)
 function calculateBMI(weightKg, heightCm) {
   const heightM = heightCm / 100;
   return (weightKg / (heightM * heightM)).toFixed(2);
