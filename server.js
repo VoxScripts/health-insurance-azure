@@ -2,18 +2,19 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
-// CORS Configuration
+// CORS Configuration (UPDATE THIS WITH YOUR STATIC SITE URL)
 app.use(cors({
-  origin: 'https://healthriskui.z1.web.core.windows.net'
+  origin: 'https://healthriskui-v2.z1.web.core.windows.net'
 }));
+
 app.use(express.json());
 
 // Root endpoint
 app.get('/', (req, res) => {
-  res.send('Health Risk API is running');
+  res.send('Health Risk API v2 is running!');
 });
 
-// Helper functions (keep exactly as you had them)
+// Helper functions
 function calculateBMI(weightKg, heightCm) {
   const heightM = heightCm / 100;
   return (weightKg / (heightM * heightM)).toFixed(2);
@@ -71,7 +72,6 @@ function getRiskCategory(points) {
 app.post('/api/calculate-risk', (req, res) => {
   const { age, weightKg, heightCm, systolic, diastolic, familyHistory } = req.body;
 
-  // Validate inputs
   if (heightCm < 60) {
     return res.status(400).json({ error: 'Height must be at least 60 cm.' });
   }
