@@ -4,7 +4,7 @@ const app = express();
 
 // CORS Configuration (UPDATE THIS WITH YOUR STATIC SITE URL)
 app.use(cors({
-  origin: 'https://healthriskstorage.web.core.windows.net'
+  origin: 'https://healthriskstorage.z1.web.core.windows.net'
 }));
 
 app.use(express.json());
