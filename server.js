@@ -2,7 +2,12 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
-app.use(cors());
+// CORS Configuration
+app.use(cors({
+  origin: 'https://healthriskui.z1.web.core.windows.net'
+}));
+app.use(express.json());
+
 // Root endpoint
 app.get('/', (req, res) => {
   res.send('Health Risk API is running');
