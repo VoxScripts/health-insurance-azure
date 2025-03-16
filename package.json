@@ -2,9 +2,9 @@
   "name": "insurance-risk-calculator",
   "version": "1.0.0",
   "description": "Health Insurance Risk Calculator API",
-  "main": "server.js",
+  "index": "server.js",
   "scripts": {
-    "run": "node server.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
