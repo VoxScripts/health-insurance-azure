@@ -61,4 +61,4 @@ jobs:
           app-name: 'health-risk-v2'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0106A9F24E804C9586AB61C3ABB08D8D }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8EDDBD1D71534DC98686317C9FE0A639 }}
